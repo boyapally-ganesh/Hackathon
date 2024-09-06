@@ -88,7 +88,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '',  # Your database name
+        'USER': '',  # Your MySQL user
+        'PASSWORD': '',  # Your MySQL password
+        'HOST': 'localhost',  # Or your database host
+        'PORT': '',  # Default MySQL port
+    }
+}
 
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

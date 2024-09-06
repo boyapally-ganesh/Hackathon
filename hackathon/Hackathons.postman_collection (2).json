@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "3ec009e2-4c8d-4231-8cf7-650f587b44cb",
+		"name": "Hackathons",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25480978"
+	},
+	"item": [
+		{
+			"name": "user registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser1\",\r\n    \"email\": \"testuser@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create hackathon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1NjQ3ODU4LCJpYXQiOjE3MjU2NDQyNTgsImp0aSI6ImE4Y2MzOTQwNGJjZDRmZjRiNzU5MWM3YTk4ZDA0MTFlIiwidXNlcl9pZCI6NX0.YlNpi0m1UEPoZRkH1cKkXjlE9oE7L6p5IRWnz-uOG4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "java",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "this is java course",
+							"type": "text"
+						},
+						{
+							"key": " background_image",
+							"type": "file",
+							"src": "C:\\Users\\HOME\\Pictures\\beanedit.png"
+						},
+						{
+							"key": "hackathon_image",
+							"type": "file",
+							"src": "C:\\Users\\HOME\\Pictures\\readme.PNG"
+						},
+						{
+							"key": "submissions_type",
+							"value": "image",
+							"type": "text"
+						},
+						{
+							"key": "start_datetime",
+							"value": "2024-09-19T17:54:00Z",
+							"type": "text"
+						},
+						{
+							"key": "end_dateTime",
+							"value": "2024-09-20T17:54:00Z",
+							"type": "text"
+						},
+						{
+							"key": "reward_prize",
+							"value": "300",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/hackathons/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"hackathons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list hackathons",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1NjQ3ODU4LCJpYXQiOjE3MjU2NDQyNTgsImp0aSI6ImE4Y2MzOTQwNGJjZDRmZjRiNzU5MWM3YTk4ZDA0MTFlIiwidXNlcl9pZCI6NX0.YlNpi0m1UEPoZRkH1cKkXjlE9oE7L6p5IRWnz-uOG4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/hackathons/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"hackathons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register for hackathon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1NjQ3ODU4LCJpYXQiOjE3MjU2NDQyNTgsImp0aSI6ImE4Y2MzOTQwNGJjZDRmZjRiNzU5MWM3YTk4ZDA0MTFlIiwidXNlcl9pZCI6NX0.YlNpi0m1UEPoZRkH1cKkXjlE9oE7L6p5IRWnz-uOG4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/hackathons/87268f35-8a81-4cda-996a-840bf80f53ed/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"hackathons",
+						"87268f35-8a81-4cda-996a-840bf80f53ed",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of hackathons  of user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1NjQ3ODU4LCJpYXQiOjE3MjU2NDQyNTgsImp0aSI6ImE4Y2MzOTQwNGJjZDRmZjRiNzU5MWM3YTk4ZDA0MTFlIiwidXNlcl9pZCI6NX0.YlNpi0m1UEPoZRkH1cKkXjlE9oE7L6p5IRWnz-uOG4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/user/enrolled-hackathons/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"user",
+						"enrolled-hackathons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submissson of hackathon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1NjQ3ODU4LCJpYXQiOjE3MjU2NDQyNTgsImp0aSI6ImE4Y2MzOTQwNGJjZDRmZjRiNzU5MWM3YTk4ZDA0MTFlIiwidXNlcl9pZCI6NX0.YlNpi0m1UEPoZRkH1cKkXjlE9oE7L6p5IRWnz-uOG4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": " hackathon",
+							"value": "html",
+							"type": "text"
+						},
+						{
+							"key": "submission_name",
+							"value": "i complted html",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "this is summery",
+							"type": "text"
+						},
+						{
+							"key": "submission_image",
+							"type": "file",
+							"src": "C:\\Users\\HOME\\Pictures\\iphone.jpg"
+						},
+						{
+							"key": "submission_file",
+							"type": "file",
+							"src": "C:\\Users\\HOME\\Pictures\\edit these photo.png"
+						},
+						{
+							"key": "submission_link",
+							"value": "http://127.0.0.1:8000/app/hackathons/c4f73847-1481-48af-99bd-837aa057d932/submissions/",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/hackathons/8e840240-6bb7-4379-a482-629db506d82f/submissions/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"hackathons",
+						"8e840240-6bb7-4379-a482-629db506d82f",
+						"submissions",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of submissions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI1NjQ3ODU4LCJpYXQiOjE3MjU2NDQyNTgsImp0aSI6ImE4Y2MzOTQwNGJjZDRmZjRiNzU5MWM3YTk4ZDA0MTFlIiwidXNlcl9pZCI6NX0.YlNpi0m1UEPoZRkH1cKkXjlE9oE7L6p5IRWnz-uOG4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/hackathons/submissions/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"hackathons",
+						"submissions",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
